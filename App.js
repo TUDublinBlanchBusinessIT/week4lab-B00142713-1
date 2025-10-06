@@ -11,8 +11,31 @@ export default function App() {
   var credits=5;
   var totalPossibleCredits = 10;
   var totalGradeScores = 0;
+
+  const styles = StyleSheet.create({
+    container: {
+      paddingLeft: "5%",
+      paddingRight: "5%",
+      paddingTop: "5%",
+    },
+    row: {
+      flexDirection: "row",
+      marginBottom: "5%"
+    },
+    label: {
+      marginRight: "5%",
+      paddingTop: 8,
+      width: "40%",
+    },
+    textInput: {
+      flex: 1,
+      borderWidth: 1,
+      borderRadius: 6,
+      padding: 8,
+    }
+  });
   
-  function clickMe(){
+    function clickMe(){
     alert("this is the click me button"); //alert for web
     Alert.alert("this is the click me button"); //alert for phone
     //get the student's gradePointsfor SSWD, multiply it by the credits 
@@ -29,24 +52,23 @@ export default function App() {
     alert("Your GPA is: " + gpa.toFixed(2));
     Alert.alert("Your GPA is: " + gpa.toFixed(2));
 
-
-  }
-
+ }   
 
 return (
     <SafeAreaView>
       <View><Text style={{flexDirection: "row", fontWeight: "bold", fontSize: 24, textAlign:"center", marginTop: "%10"}}>GPA Calculator</Text></View>
-      <View>
-        <Text>Maths</Text>
-        <TextInput  placeholder="Grade" onChangeText={setSswd}/>
+      <View style={styles.container}>
+        <Text style={styles.label}>Maths</Text>
+        <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setSswd}/>
       </View>
-      <View >
-        <Text>Organisational Behaviour</Text>
-        <TextInput placeholder="Grade" onChangeText={setOb}/>
+      <View style={styles.container}>
+        <Text style={styles.label}>Organisational Behaviour</Text>
+        <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setOb}/>
       </View>
       <View >
         <Button title="submit" onPress={clickMe}/>
       </View>
     </SafeAreaView>
-  );
-}
+    );
+  }
+
