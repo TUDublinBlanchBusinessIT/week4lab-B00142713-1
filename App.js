@@ -6,6 +6,10 @@ export default function App() {
   
   const [sswd, setSswd] = useState('D');
   const [ob, setOb] = useState('D');
+  const [mobileApps, setMobileApps] = useState('D');
+  const [digitalMarketing, setDigitalMarketing] = useState('D');
+  const [ooaD, setOoAD] = useState('D');
+  const [financialManagement, setFinancialManagement] = useState('D');
   
   var gpa=0;
   var credits=5;
@@ -65,10 +69,25 @@ return (
         <Text style={styles.label}>Organisational Behaviour</Text>
         <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setOb}/>
       </View>
+      <View style={styles.container}>
+        <Text style={styles.label}>Mobile Apps</Text>
+        <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setSswd}/>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.label}>Digital Marketing</Text>
+        <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setSswd}/>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.label}>Financial Management</Text>
+        <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setSswd}/>
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.label}>OOAD</Text>
+        <TextInput style={styles.textInput} placeholder="Grade" onChangeText={setSswd}/>
+      </View>
       <View >
         <Button title="submit" onPress={clickMe}/>
       </View>
     </SafeAreaView>
     );
   }
-
