@@ -15,15 +15,21 @@ export default function App() {
   function clickMe(){
     alert("this is the click me button"); //alert for web
     Alert.alert("this is the click me button"); //alert for phone
-    //get the studnet's gradePointsfor SSWD, multiply it by the credits 
+    //get the student's gradePointsfor SSWD, multiply it by the credits 
     //add the result to totalGradeScores as an accumulator variable (e.g. tgs=tgs+sswd)
+    totalGradeScores = totalGradeScores + (gradePoints[sswd] * credits);
 
     
     //get the student's gradePointsfor Ob, multiply it by the credits
     //add the result to totalGradeScores as an accumulator variable (e.g. tgs=tgs+ob)
-   
+    totalGradeScores = totalGradeScores + (gradePoints[ob] * credits);
     //calculate the gpa as the totalsGradeScores divided by the totalPossibleCredits
+    gpa = totalGradeScores / totalPossibleCredits;
     //Output the calculated GPA result to the user using an alert (you must concatenate the gpa)
+    alert("Your GPA is: " + gpa.toFixed(2));
+    Alert.alert("Your GPA is: " + gpa.toFixed(2));
+
+
   }
 
 
@@ -36,7 +42,7 @@ return (
       </View>
       <View >
         <Text>Organisational Behaviour</Text>
-        <TextInput placeholder="Grade" onChangeText={setOb)}/>
+        <TextInput placeholder="Grade" onChangeText={setOb}/>
       </View>
       <View >
         <Button title="submit" onPress={clickMe}/>
@@ -44,4 +50,3 @@ return (
     </SafeAreaView>
   );
 }
-
